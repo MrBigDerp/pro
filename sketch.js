@@ -1,6 +1,6 @@
 //Create variables here
 var dog,happyDog,database,foodS,foodStock;
-var feed, addFood;
+var feed, addFoood;
 var fedTime, lastFed;
 var foodObj;
 function preload()
@@ -25,9 +25,9 @@ function setup() {
   feed.mousePressed(feedDog);
   feed.mouseReleased(doggoSit)
 
-  addFood = createButton("Add Food")
-  addFood.position(800,95)
-  addFood.mousePressed(addFood)
+  addFoood = createButton("Add Food")
+  addFoood.position(800,95)
+  addFoood.mousePressed(addFood)
 
 
   foodStock = 20;
@@ -67,7 +67,7 @@ function draw() {
   //add styles here
 textSize(20);
   fill("white");
-  text("Food Left:"+foodS,200,150)
+  text("Food Left:"+foodS,390,30)
 }
 
 function readStock(database){
@@ -92,6 +92,7 @@ function feedDog(){
 
   function addFood(){
     foodS++
+    foodObj.foodStock = foodS
     database.ref('/').update({
       Food:foodS
     })
