@@ -34,6 +34,7 @@ class Food{
                     y = y+ 50;
                 }
                 x = x+30;
+                this.image(this.image,x,y,70,70)
             }
         }
     }
